@@ -1,7 +1,13 @@
 package Academy;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.annotations.Test;
+
 import java.io.IOException;
 
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -9,28 +15,42 @@ import pageObjects.LandingPage;
 import pageObjects.LoginPage;
 
 public class HomePage extends BaseUd {
+	public String url;
+	public static Logger log=LogManager.getLogger(BaseUd.class.getName());
+
+	@BeforeTest
+	public void beforetest() throws IOException
+	{
+		  driver= intializeDriver();
+		  log.info("Driver is intialized");
+		
+	}
 @Test(dataProvider="getData")
 //	@Test
 	public void basePageNavigation(String username,String Password,String text) throws IOException, InterruptedException
 	{
-	  BaseUd base=new HomePage();
-	 driver= base.intializeDriver();
-	 driver.get("http://www.qaclickacademy.com/");
-	 
+
+	url= geturl("url");
+	 driver.get(url);
 	LandingPage lp=new LandingPage(driver);
 	lp.getLogin().click();
 	Thread.sleep(300);
-	LoginPage log=new LoginPage(driver);
-	log.getemail().sendKeys(username);
-	log.getpassword().sendKeys(Password);
-	log.loginbutton().click();
-	System.out.println(text);
+	LoginPage login=new LoginPage(driver);
+	login.getemail().sendKeys(username);
+	login.getpassword().sendKeys(Password);
+	login.loginbutton().click();
+	log.info(text);
+	
 	Thread.sleep(300);
-	driver.close();
 	
 	
 	}
 	
+@AfterTest
+public void aftertest()
+{
+	driver.close();
+}
 	@DataProvider
 	public Object[][] getData()
 	{
