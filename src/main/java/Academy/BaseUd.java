@@ -15,11 +15,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 @SuppressWarnings("unused")
 public class BaseUd {
 	public WebDriver driver;
+	public Properties prop ;
 
 	public WebDriver intializeDriver() throws IOException {
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(
-				"D:\\udemy prac\\Udem24MavenProject\\src\\main\\java\\Academy\\datadriven.properties");
+		 prop = new Properties();
+		FileInputStream fis = new FileInputStream("D:\\udemy prac\\Udem24MavenProject\\src\\main\\java\\Academy\\datadriven.properties");
 		prop.load(fis);
 		String browsername = prop.getProperty("browser");
 
@@ -47,6 +47,14 @@ public class BaseUd {
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
+	}
+	
+	public String geturl(String url) throws IOException
+	{
+
+		 return url = prop.getProperty("url");
+	
+		
 	}
 
 	
