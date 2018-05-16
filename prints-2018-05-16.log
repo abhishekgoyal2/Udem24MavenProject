@@ -1,0 +1,8 @@
+18:01:24.951 [main] INFO  Academy.BaseUd - nonrestricteduser
+18:01:41.060 [main] INFO  Academy.BaseUd - Driver in intialized
+18:01:46.345 [main] INFO  Academy.BaseUd - Navigated to Home Page
+18:01:59.563 [main] INFO  Academy.BaseUd - Driver in intialized
+18:02:04.265 [main] INFO  Academy.BaseUd - Navigated to Home Page
+18:10:34.584 [main] INFO  Academy.BaseUd - Driver is intialized
+18:10:49.802 [main] INFO  Academy.BaseUd - restricted user
+18:11:08.502 [main] INFO  Academy.BaseUd - nonrestricteduser

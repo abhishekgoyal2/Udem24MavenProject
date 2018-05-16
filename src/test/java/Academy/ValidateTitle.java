@@ -29,7 +29,7 @@ public class ValidateTitle extends BaseUd {
 	@Test
 	
 //																																	
-	public void basePageNavigation() throws IOException
+	public void ValdiateTitle() throws IOException
 	{
 	  
 //	 base.geturl("http://www.qaclickacademy.com/");
@@ -37,7 +37,7 @@ public class ValidateTitle extends BaseUd {
 	LandingPage lp=new LandingPage(driver);
 	String expect=lp.getTitle().getText();
 	System.out.println(expect);
-	AssertJUnit.assertEquals(expect, "FEATURED COURSES");
+	AssertJUnit.assertEquals(expect, "FEATURED COURSES1");
 	
 	//compare text with browser text
 	
@@ -49,6 +49,7 @@ public class ValidateTitle extends BaseUd {
 	public void aftertest()
 	{
 		driver.close();
+		driver=null;
 	}
 	
 }

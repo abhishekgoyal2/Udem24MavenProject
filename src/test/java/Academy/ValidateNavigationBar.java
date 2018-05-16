@@ -35,7 +35,7 @@ public class ValidateNavigationBar extends BaseUd {
 	@Test
 	
 //																																	
-	public void basePageNavigation() throws IOException
+	public void ValidateNavigation() throws IOException
 	{
 	 
 	 
@@ -54,6 +54,7 @@ public class ValidateNavigationBar extends BaseUd {
 	public void Closebrowser()
 	{
 		driver.close();
+		driver=null;
 	}
 	
 }

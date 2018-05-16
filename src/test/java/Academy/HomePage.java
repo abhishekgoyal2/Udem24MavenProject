@@ -27,7 +27,7 @@ public class HomePage extends BaseUd {
 	}
 @Test(dataProvider="getData")
 //	@Test
-	public void basePageNavigation(String username,String Password,String text) throws IOException, InterruptedException
+	public void GotoHomepage(String username,String Password,String text) throws IOException, InterruptedException
 	{
 
 	url= geturl("url");
@@ -50,6 +50,7 @@ public class HomePage extends BaseUd {
 public void aftertest()
 {
 	driver.close();
+	driver=null;
 }
 	@DataProvider
 	public Object[][] getData()
